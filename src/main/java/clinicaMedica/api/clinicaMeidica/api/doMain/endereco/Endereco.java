@@ -24,12 +24,12 @@ public class Endereco {
 
 
     public Endereco(DadosEndereco dados) {
-        this.logradouro = logradouro;
-        this.bairro = bairro;
-        this.cidade = cidade;
-        this.cep = cep;
-        this.uf = uf;
-        this.numero = numero;
-        this.complemento = complemento;
+        this.logradouro = dados.logradouro();
+        this.bairro = dados.bairro();
+        this.cidade = dados.cidade();
+        this.cep = dados.cep();
+        this.uf = dados.uf();
+        this.numero = dados.numero();
+        this.complemento = dados.complemento();
     }
 }
