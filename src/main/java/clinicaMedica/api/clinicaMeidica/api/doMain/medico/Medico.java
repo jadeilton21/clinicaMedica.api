@@ -1,6 +1,7 @@
 package clinicaMedica.api.clinicaMeidica.api.doMain.medico;
 
 
+import clinicaMedica.api.clinicaMeidica.api.doMain.endereco.DadosEndereco;
 import clinicaMedica.api.clinicaMeidica.api.doMain.endereco.Endereco;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -33,12 +34,13 @@ public class Medico {
 
     public Medico(DadosCadastrarMedico dados) {
 
-        this.nome = nome;
-        this.email = email;
-        this.telefone = telefone;
-        this.crm = crm;
-        this.especialidade = especialidade;
-        this.endereco = endereco;
+        this.nome = dados.nome();
+        this.email = dados.email();
+        this.telefone = dados.telefone();
+        this.crm = dados.crm();
+        this.especialidade = dados.especialidade();
+        this.endereco = new Endereco(dados.dadosEndereco());
         this.ativo = true;
     }
+
 }
