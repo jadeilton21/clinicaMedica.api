@@ -1,14 +1,18 @@
 package clinicaMedica.api.clinicaMeidica.api.controller;
 
 
+import clinicaMedica.api.clinicaMeidica.api.doMain.medico.DadosCadastrarMedico;
 import clinicaMedica.api.clinicaMeidica.api.doMain.medico.MedicoRepository;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.util.UriComponentsBuilder;
 
 @RestController
 @RequestMapping("medicos")
@@ -19,8 +23,10 @@ public class MedicoController {
     private MedicoRepository medicoRepository;
 
 
+    @PostMapping
+    @Transactional
+    public ResponseEntity cadastrarMedico(@RequestBody @Valid DadosCadastrarMedico dados, UriComponentsBuilder uriBulder){
 
-    public ResponseEntity cadastrarMedico(@RequestBody @Valid                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     ){
 
     }
 }
