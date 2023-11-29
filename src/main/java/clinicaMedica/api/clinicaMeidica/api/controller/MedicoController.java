@@ -2,6 +2,8 @@ package clinicaMedica.api.clinicaMeidica.api.controller;
 
 
 import clinicaMedica.api.clinicaMeidica.api.doMain.medico.DadosCadastrarMedico;
+import clinicaMedica.api.clinicaMeidica.api.doMain.medico.DadosDetalhamentoMedico;
+import clinicaMedica.api.clinicaMeidica.api.doMain.medico.Medico;
 import clinicaMedica.api.clinicaMeidica.api.doMain.medico.MedicoRepository;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
@@ -26,7 +28,11 @@ public class MedicoController {
     @PostMapping
     @Transactional
     public ResponseEntity cadastrarMedico(@RequestBody @Valid DadosCadastrarMedico dados, UriComponentsBuilder uriBulder){
+        var medico = new Medico(dados);
 
+        var uri = uriBulder.path("/medicos/{id}").buildAndExpand(medico.getId()).toUri();
+
+        return ResponseEntity.created(uri).body(new DadosDetalhamentoMedico(medico));
 
     }
 }
