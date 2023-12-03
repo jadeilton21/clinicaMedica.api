@@ -1,5 +1,6 @@
 package clinicaMedica.api.clinicaMeidica.api.infra.security;
 
+import clinicaMedica.api.clinicaMeidica.api.doMain.usuario.Usuario;
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.JWTCreationException;
@@ -16,7 +17,7 @@ public class TokenService {
     @Value("${api.security.token.secret}")
     private String secret;
 
-    private static final String ISSUER = "API ClinicaMedica.api";
+    private static final String ISSUER = "ClinicaMedica.api";
 
     public String gerarToken(Usuario usuario) {
         try {
