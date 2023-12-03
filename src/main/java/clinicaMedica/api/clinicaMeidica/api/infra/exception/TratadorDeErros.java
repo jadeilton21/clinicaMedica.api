@@ -1,7 +1,9 @@
 package clinicaMedica.api.clinicaMeidica.api.infra.exception;
 
+import clinicaMedica.api.clinicaMeidica.api.doMain.ValidacaoException;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
