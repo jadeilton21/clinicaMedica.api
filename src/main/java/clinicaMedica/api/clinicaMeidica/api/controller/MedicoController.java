@@ -48,4 +48,14 @@ public class MedicoController {
 
 
     }
+
+
+    public ResponseEntity atualizar(@RequestBody @Valid DadosAtualizacaoMedicos dados){
+        var medico = medicoRepository.getReferenceById(dados.id());
+        medico.atualizarInformacoes(dados);
+        return ResponseEntity.ok(new DadosListagemMedicos(medico));
+    }
+
+
+
 }
