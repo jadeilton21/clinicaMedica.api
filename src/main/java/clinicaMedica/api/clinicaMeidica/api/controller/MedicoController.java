@@ -10,10 +10,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 
 @RestController
@@ -36,8 +33,7 @@ public class MedicoController {
 
     }
 
-
-
+    @GetMapping
     public ResponseEntity<Page<DadosListagemMedicos>> listar(@PageableDefault(size = 10, sort = {"nome"}) Pageable paginacao){
 
 
@@ -49,7 +45,8 @@ public class MedicoController {
 
     }
 
-
+    @PutMapping
+    @Transactional
     public ResponseEntity atualizar(@RequestBody @Valid DadosAtualizacaoMedicos dados){
         var medico = medicoRepository.getReferenceById(dados.id());
         medico.atualizarInformacoes(dados);
@@ -57,5 +54,14 @@ public class MedicoController {
     }
 
 
+
+    @DeleteMapping
+    @Transactional
+    public ResponseEntity excluir(@PathVariable Long id){
+        var medico = medicoRepository.getReferenceById(id);
+        medico.excluir();
+
+        return ResponseEntity.noContent().build();
+    }
 
 }
