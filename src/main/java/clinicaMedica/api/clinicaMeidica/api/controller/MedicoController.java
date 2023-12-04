@@ -1,13 +1,13 @@
 package clinicaMedica.api.clinicaMeidica.api.controller;
 
 
-import clinicaMedica.api.clinicaMeidica.api.doMain.medico.DadosCadastrarMedico;
-import clinicaMedica.api.clinicaMeidica.api.doMain.medico.DadosDetalhamentoMedico;
-import clinicaMedica.api.clinicaMeidica.api.doMain.medico.Medico;
-import clinicaMedica.api.clinicaMeidica.api.doMain.medico.MedicoRepository;
+import clinicaMedica.api.clinicaMeidica.api.doMain.medico.*;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -33,6 +33,19 @@ public class MedicoController {
         var uri = uriBulder.path("/medicos/{id}").buildAndExpand(medico.getId()).toUri();
 
         return ResponseEntity.created(uri).body(new DadosDetalhamentoMedico(medico));
+
+    }
+
+
+
+    public ResponseEntity<Page<DadosListagemMedicos>> listar(@PageableDefault(size = 10, sort = {"nome"}) Pageable paginacao){
+
+
+        var page = medicoRepository.findAllByAtivoTrue(paginacao).map(DadosListagemMedicos::new);
+
+        return ResponseEntity.ok(page);
+
+
 
     }
 }
