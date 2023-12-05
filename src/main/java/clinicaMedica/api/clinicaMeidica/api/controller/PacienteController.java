@@ -2,16 +2,19 @@ package clinicaMedica.api.clinicaMeidica.api.controller;
 
 
 import clinicaMedica.api.clinicaMeidica.api.doMain.paciente.DadosCadastroPaciente;
+import clinicaMedica.api.clinicaMeidica.api.doMain.paciente.DadosListagemPaciente;
 import clinicaMedica.api.clinicaMeidica.api.doMain.paciente.Paciente;
 import clinicaMedica.api.clinicaMeidica.api.doMain.paciente.PacienteRepository;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.awt.print.Pageable;
+
 
 @RestController
 @RequestMapping("pacientes")
@@ -30,5 +33,9 @@ public class PacienteController {
 
     }
 
+    @GetMapping
+    public Page<DadosListagemPaciente> listarPaciente(@PageableDefault(size = 10, sort = {"nome"}) Pageable paginacao){
+        return pacienteRepository.findAllByAtivoTrue(paginacao).map(DadosListagemPaciente::new);
+    }
 
 }
