@@ -37,7 +37,8 @@ public class PacienteController {
     @Transactional
     public void atualizarPacientes(@RequestBody @Valid DadosAtualizarPacientes dados){
 
-
+        var paciente = pacienteRepository.getReferenceById(dados.id());
+        paciente.atualizarInfomacoes(dados);
 
     }
 
