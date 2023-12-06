@@ -1,10 +1,7 @@
 package clinicaMedica.api.clinicaMeidica.api.controller;
 
 
-import clinicaMedica.api.clinicaMeidica.api.doMain.paciente.DadosCadastroPaciente;
-import clinicaMedica.api.clinicaMeidica.api.doMain.paciente.DadosListagemPaciente;
-import clinicaMedica.api.clinicaMeidica.api.doMain.paciente.Paciente;
-import clinicaMedica.api.clinicaMeidica.api.doMain.paciente.PacienteRepository;
+import clinicaMedica.api.clinicaMeidica.api.doMain.paciente.*;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
