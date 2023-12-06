@@ -36,6 +36,14 @@ public class PacienteController {
         return pacienteRepository.findAllByAtivoTrue(paginacao).map(DadosListagemPaciente::new);
     }
 
+    @PutMapping
+    @Transactional
+    public void atualizarPacientes(@RequestBody @Valid DadosAtualizarPacientes dados){
+
+
+
+    }
+
 
 
 }
