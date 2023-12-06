@@ -27,7 +27,6 @@ public class PacienteController {
     @PostMapping
     @Transactional
     public void cadastrarPaciente (@RequestBody @Valid DadosCadastroPaciente dados){
-
         pacienteRepository.save(new Paciente(dados));
 
     }
@@ -36,5 +35,7 @@ public class PacienteController {
     public Page<DadosListagemPaciente> listarPaciente(@PageableDefault(size = 10, sort = {"nome"}) Pageable paginacao){
         return pacienteRepository.findAllByAtivoTrue(paginacao).map(DadosListagemPaciente::new);
     }
+
+
 
 }
