@@ -4,16 +4,17 @@ import clinicaMedica.api.clinicaMeidica.api.doMain.funcionario.DadosCadastrarFun
 import clinicaMedica.api.clinicaMeidica.api.doMain.funcionario.DadosListagemFuncionario;
 import clinicaMedica.api.clinicaMeidica.api.doMain.funcionario.Funcionario;
 import clinicaMedica.api.clinicaMeidica.api.doMain.funcionario.FuncionarioRespository;
+import clinicaMedica.api.clinicaMeidica.api.doMain.paciente.DadosListagemPaciente;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.data.domain.Pageable;
 
 @RestController
 @RequestMapping("funcionarios")
@@ -34,9 +35,9 @@ public class FuncionarioController {
     }
 
 
-
-    public Page<DadosListagemFuncionario> listarFuncionario(@RequestBody@Valid DadosListagemFuncionario dados){
-
+    @GetMapping
+    public Page<DadosListagemFuncionario> listarFuncionario(@PageableDefault(size = 10, sort = {"nome"}) Pageable paginacao){
+        return funcionarioRespository.findAllByAtivoTrue(paginacao).map(DadosListagemFuncionario::new);
     }
 
 
