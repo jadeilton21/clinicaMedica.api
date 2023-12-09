@@ -1,9 +1,6 @@
 package clinicaMedica.api.clinicaMeidica.api.controller;
 
-import clinicaMedica.api.clinicaMeidica.api.doMain.funcionario.DadosCadastrarFuncionario;
-import clinicaMedica.api.clinicaMeidica.api.doMain.funcionario.DadosListagemFuncionario;
-import clinicaMedica.api.clinicaMeidica.api.doMain.funcionario.Funcionario;
-import clinicaMedica.api.clinicaMeidica.api.doMain.funcionario.FuncionarioRespository;
+import clinicaMedica.api.clinicaMeidica.api.doMain.funcionario.*;
 import clinicaMedica.api.clinicaMeidica.api.doMain.paciente.DadosListagemPaciente;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
