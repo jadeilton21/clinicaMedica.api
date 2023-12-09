@@ -41,4 +41,10 @@ public class FuncionarioController {
     }
 
 
+
+    public void atualizarFuncionario(@RequestBody @Valid DadosAtualizarFuncionarios dados){
+
+    }
+
+
 }
