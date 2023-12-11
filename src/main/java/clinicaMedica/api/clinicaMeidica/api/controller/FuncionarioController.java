@@ -46,5 +46,10 @@ public class FuncionarioController {
 
     }
 
+    public void excluirFuncionario(@PathVariable Long id){
+        var funcionario = funcionarioRespository.getReferenceById(id);
+        funcionario.excluir();
+    }
+
 
 }
