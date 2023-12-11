@@ -45,7 +45,8 @@ public class FuncionarioController {
         return ResponseEntity.ok(new DadosListagemFuncionario(funcionario));
 
     }
-
+    @DeleteMapping
+    @Transactional
     public void excluirFuncionario(@PathVariable Long id){
         var funcionario = funcionarioRespository.getReferenceById(id);
         funcionario.excluir();
