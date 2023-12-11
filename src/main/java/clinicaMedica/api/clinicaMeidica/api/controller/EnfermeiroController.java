@@ -36,13 +36,21 @@ public class EnfermeiroController {
 
     }
 
-
+    @PutMapping
+    @Transactional
     public ResponseEntity atualizarEnfermeiro(@RequestBody @Valid DadosAtualizarEnfermeiros dados){
 
         var enfermeiros = enfermeiroRepository.getReferenceById(dados.id());
         enfermeiros.atualizarInformacoes(dados);
         return ResponseEntity.ok(new DadosListagemEnfermeiro(enfermeiros));
 
+    }
+
+    @DeleteMapping
+    @Transactional
+    public void excluirEnfermeiros(@PathVariable Long id){
+        var enfermeiros = enfermeiroRepository.getReferenceById(id);
+        enfermeiros.excluir();
     }
 
 
