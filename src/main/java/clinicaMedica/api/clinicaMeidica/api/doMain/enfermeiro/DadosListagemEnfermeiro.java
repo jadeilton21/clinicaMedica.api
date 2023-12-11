@@ -1,12 +1,12 @@
 package clinicaMedica.api.clinicaMeidica.api.doMain.enfermeiro;
 
-import clinicaMedica.api.clinicaMeidica.api.doMain.endereco.DadosEndereco;
-
-public record DadosListagemEnfermeiro(Long id, String nome, String cpf, String email, String telefone, String coren, DadosEndereco endereco) {
+public record DadosListagemEnfermeiro(Long id, String nome, String cpf, String email, String telefone) {
 
 
+    public DadosListagemEnfermeiro(Enfermeiro enfermeiro){
 
-
+        this(enfermeiro.getId(),enfermeiro.getNome(),enfermeiro.getCpf(), enfermeiro.getCoren(), enfermeiro.getTelefone());
+    }
 
 
 }
