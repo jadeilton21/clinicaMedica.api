@@ -41,12 +41,15 @@ public class Consulta {
     private MotivoDoCancelamento motivoDoCancelamento;
 
 
-    public Consulta(Long id, Medico medico, Enfermeiro enfermeiro, Paciente paciente, LocalDateTime localDateTime) {
-        this.id = id;
+
+
+
+    public Consulta(Long id, Medico medico, Paciente paciente, Enfermeiro enfermeiro, LocalDateTime data) {
+        this.id =id;
         this.medico = medico;
         this.enfermeiro = enfermeiro;
         this.paciente = paciente;
-        this.localDateTime = localDateTime;
+        this.localDateTime = data;
     }
 
 
