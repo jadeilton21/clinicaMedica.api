@@ -8,4 +8,6 @@ public record DadosDetalhamentoConsulta(
         @NotNull
         MotivoDoCancelamento motivo
 ) {
+    public DadosDetalhamentoConsulta(Consulta consulta) {
+    }
 }
