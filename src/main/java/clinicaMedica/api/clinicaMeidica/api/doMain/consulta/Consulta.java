@@ -35,7 +35,7 @@ public class Consulta {
     @JoinColumn(name = "paciente_id")
     private Paciente paciente;
 
-    private LocalDateTime localDateTime;
+    private LocalDateTime Data;
     @Column(name = "motivo_cancelamento")
     @Enumerated(EnumType.STRING)
     private MotivoDoCancelamento motivoDoCancelamento;
@@ -45,11 +45,11 @@ public class Consulta {
 
 
     public Consulta(Long id, Medico medico, Paciente paciente, Enfermeiro enfermeiro, LocalDateTime data) {
-        this.id =id;
+        this.id = id;
         this.medico = medico;
         this.enfermeiro = enfermeiro;
         this.paciente = paciente;
-        this.localDateTime = data;
+        this.Data = data;
     }
 
 
@@ -57,6 +57,8 @@ public class Consulta {
         this.motivoDoCancelamento = motivo;
     }
 
-
+    public LocalDateTime getData() {
+        return Data;
+    }
 
 }
