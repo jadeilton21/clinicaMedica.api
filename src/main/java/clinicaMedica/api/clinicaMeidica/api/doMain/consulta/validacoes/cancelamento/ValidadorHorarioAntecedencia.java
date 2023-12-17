@@ -1,4 +1,8 @@
 package clinicaMedica.api.clinicaMeidica.api.doMain.consulta.validacoes.cancelamento;
 
-public class ValidadorHorarioAntecedencia {
+
+import org.springframework.stereotype.Component;
+
+@Component("ValidadorHorarioAntecedenciaCancelamento")
+public class ValidadorHorarioAntecedencia implements ValidadorCancelamentoDeConsultas{
 }
