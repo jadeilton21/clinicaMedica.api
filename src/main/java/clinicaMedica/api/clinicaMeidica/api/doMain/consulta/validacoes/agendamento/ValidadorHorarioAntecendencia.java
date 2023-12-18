@@ -1,4 +1,15 @@
 package clinicaMedica.api.clinicaMeidica.api.doMain.consulta.validacoes.agendamento;
 
-public class ValidadorHorarioAntecendencia {
+
+import clinicaMedica.api.clinicaMeidica.api.doMain.consulta.DadosAgendamentoConsulta;
+import org.springframework.stereotype.Component;
+
+@Component("ValidadorHorarioAntecendenciaAgendamento")
+public class ValidadorHorarioAntecendencia implements ValidadorAgendamentoDeConsultas{
+
+
+    @Override
+    public void validar(DadosAgendamentoConsulta dados) {
+
+    }
 }
