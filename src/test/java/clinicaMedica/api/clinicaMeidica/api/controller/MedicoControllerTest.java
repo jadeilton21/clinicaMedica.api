@@ -25,7 +25,7 @@ class MedicoControllerTest {
     @Test
     @WithMockUser
     @DisplayName("Deve Devolver Código ")
-    void cadastrarMedico() throws Exception{
+    void cadastrarMedico_cenario1() throws Exception{
 
         var response = mockMvc
                 .perform(post("/medicos"))
