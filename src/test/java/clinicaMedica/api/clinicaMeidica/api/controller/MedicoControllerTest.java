@@ -24,7 +24,7 @@ class MedicoControllerTest {
     private MockMvc mockMvc;
     @Test
     @WithMockUser
-    @DisplayName("Deve Devolver Código ")
+    @DisplayName("Deve Devolver Código HTTP 400 quando informações estiverem invalidas ")
     void cadastrarMedico_cenario1() throws Exception{
 
         var response = mockMvc
@@ -38,5 +38,11 @@ class MedicoControllerTest {
 
 
 
+    }
+
+    @Test
+    @WithMockUser
+    @DisplayName("Deve Devolver Código HTTP 400 quando Informações forem Invalidas...")
+    void listar_cenario1() throws Exception{
     }
 }
