@@ -20,6 +20,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 @AutoConfigureJsonTesters
 class MedicoControllerTest {
 
+
     @Autowired
     private MockMvc mockMvc;
     @Test
