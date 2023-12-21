@@ -56,6 +56,8 @@ class MedicoControllerTest {
     }
 
     @Test
-    void atualizar() {
+    @WithMockUser
+    @DisplayName("Deve Devolver Código HTTP 404 quando informações forem invalidas..")
+    void atualizar_cenario1() {
     }
 }
