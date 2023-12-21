@@ -44,5 +44,14 @@ class MedicoControllerTest {
     @WithMockUser
     @DisplayName("Deve Devolver Código HTTP 404 quando Informações forem Invalidas...")
     void listar_cenario1() throws Exception{
+
+
+        var response = mockMvc
+                .perform(post("/medicos"))
+                .andReturn().getResponse();
+
+
+        assertThat(response.getStatus())
+                .isEqualTo(HttpStatus.BAD_REQUEST.value());
     }
 }
