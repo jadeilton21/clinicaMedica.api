@@ -77,5 +77,14 @@ class MedicoControllerTest {
     void exclui_cenario1() throws Exception {
 
 
+        var response = mockMvc
+                .perform(post("/medicos"))
+                .andReturn().getResponse();
+
+
+        assertThat(response.getStatus())
+                .isEqualTo(HttpStatus.BAD_REQUEST.value());
+
+
     }
 }
