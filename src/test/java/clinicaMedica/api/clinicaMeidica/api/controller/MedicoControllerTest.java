@@ -76,7 +76,6 @@ class MedicoControllerTest {
     @DisplayName("Deve Devolver Código HTTP 404 quando informações forem invalidas..")
     void exclui_cenario1() throws Exception {
 
-
         var response = mockMvc
                 .perform(post("/medicos"))
                 .andReturn().getResponse();
