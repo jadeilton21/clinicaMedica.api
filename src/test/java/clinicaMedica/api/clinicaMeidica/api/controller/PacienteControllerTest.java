@@ -43,6 +43,6 @@ class PacienteControllerTest {
 
 
     @Test
-    void listarPaciente() {
+    void listarPaciente_cenario1() {
     }
 }
