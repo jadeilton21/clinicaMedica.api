@@ -56,4 +56,8 @@ class PacienteControllerTest {
                 .isEqualTo(HttpStatus.BAD_REQUEST.value());
 
     }
+
+    @Test
+    void atualizarPacientes() {
+    }
 }
