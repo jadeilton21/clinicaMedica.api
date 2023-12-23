@@ -73,6 +73,10 @@ class PacienteControllerTest {
     }
 
     @Test
-    void excluirPaciente() {
+    @DisplayName("Deve Devolver Código Http 404 quando informações estiverem Invalidas.")
+    void excluirPaciente_cenario1() throws Exception{
+
+
+
     }
 }
