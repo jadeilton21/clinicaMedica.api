@@ -36,7 +36,9 @@ class EnfermeiroControllerTest {
 
 
 
+    }
 
-
+    @Test
+    void atualizarEnfermeiro() {
     }
 }
