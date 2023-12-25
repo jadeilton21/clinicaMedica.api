@@ -56,5 +56,13 @@ class EnfermeiroControllerTest {
     @Test
     @DisplayName("Deve Devolver Código Http 404 quando Informações estiverem Invalidas...")
     void listarEnfermeiro_cenario1() throws Exception {
+
+        var response = mockMvc
+                .perform(post("/enfermeiros"))
+                .andReturn().getResponse();
+
+
+        assertThat(response.getStatus())
+                .isEqualTo(HttpStatus.BAD_REQUEST.value());
     }
 }
