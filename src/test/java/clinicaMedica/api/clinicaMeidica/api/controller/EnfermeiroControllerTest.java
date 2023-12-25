@@ -54,6 +54,7 @@ class EnfermeiroControllerTest {
     }
 
     @Test
-    void listarEnfermeiro() {
+    @DisplayName("Deve Devolver Código Http 404 quando Informações estiverem Invalidas...")
+    void listarEnfermeiro_cenario1() throws Exception {
     }
 }
