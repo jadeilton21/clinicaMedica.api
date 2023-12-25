@@ -1,5 +1,6 @@
 package clinicaMedica.api.clinicaMeidica.api.controller;
 
+import lombok.val;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,6 +40,15 @@ class EnfermeiroControllerTest {
     }
 
     @Test
-    void atualizarEnfermeiro() {
+    @DisplayName("Deve Devolver Código Http 404 quando informações estiverem invalidas...")
+    void atualizarEnfermeiro_cenario1() throws Exception {
+
+        var response = mockMvc
+                .perform(post("/enfermeiros"))
+                .andReturn().getResponse();
+
+
+        assertThat(response.getStatus())
+                .isEqualTo(HttpStatus.BAD_REQUEST.value());
     }
 }
