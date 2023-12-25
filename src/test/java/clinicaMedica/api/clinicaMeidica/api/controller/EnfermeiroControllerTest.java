@@ -52,4 +52,8 @@ class EnfermeiroControllerTest {
                 .isEqualTo(HttpStatus.BAD_REQUEST.value());
 
     }
+
+    @Test
+    void listarEnfermeiro() {
+    }
 }
