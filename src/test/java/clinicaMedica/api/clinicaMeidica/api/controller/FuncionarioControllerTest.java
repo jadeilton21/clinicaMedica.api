@@ -19,6 +19,8 @@ class FuncionarioControllerTest {
     private MockMvc mockMvc;
 
     @Test
-    void cadastrarFuncionario() {
+    void cadastrarFuncionario_cenario1() throws Exception {
+
+
     }
 }
