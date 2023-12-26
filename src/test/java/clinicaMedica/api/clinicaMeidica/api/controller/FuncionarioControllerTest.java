@@ -1,5 +1,6 @@
 package clinicaMedica.api.clinicaMeidica.api.controller;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.data.jdbc.AutoConfigureDataJdbc;
@@ -23,6 +24,7 @@ class FuncionarioControllerTest {
     private MockMvc mockMvc;
 
     @Test
+    @DisplayName("Deve Devolver Código Http 404 Quando Informações forem invalidas...")
     void cadastrarFuncionario_cenario1() throws Exception {
         var response = mockMvc
                 .perform(post("/funcionarios"))
