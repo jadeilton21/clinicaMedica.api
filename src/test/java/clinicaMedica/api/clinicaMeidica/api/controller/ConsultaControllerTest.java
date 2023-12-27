@@ -9,6 +9,6 @@ class ConsultaControllerTest {
 
     @Test
     @DisplayName("Deve Devolver Código Http 404 quando informações forem invalidas...")
-    void agendar() {
+    void agendar_cenario1() {
     }
 }
