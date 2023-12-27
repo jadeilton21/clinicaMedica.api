@@ -48,6 +48,9 @@ class FuncionarioControllerTest {
     }
 
     @Test
-    void atualizarFuncionario() {
+    @DisplayName("Deve Devolver Código http 404 quando informações forem invalidas..")
+    void atualizarFuncionario_cenario1() throws Exception {
+
+
     }
 }
