@@ -46,4 +46,8 @@ class FuncionarioControllerTest {
                 .isEqualTo(HttpStatus.BAD_REQUEST.value());
 
     }
+
+    @Test
+    void atualizarFuncionario() {
+    }
 }
