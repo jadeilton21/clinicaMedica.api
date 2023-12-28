@@ -37,5 +37,13 @@ class ConsultaControllerTest {
     @Test
     @DisplayName("Deve Devolve Código http 404 quando informações forem invalidas..")
     void cancelar_cenario1() throws Exception {
+
+        var response = mocMvc
+                .perform(post("/consultas"))
+                .andReturn().getResponse();
+
+        assertThat(response.getStatus())
+                .isEqualTo(HttpStatus.BAD_REQUEST.value());
+
     }
 }
