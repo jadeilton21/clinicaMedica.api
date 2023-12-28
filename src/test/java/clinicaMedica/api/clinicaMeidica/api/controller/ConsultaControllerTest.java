@@ -35,6 +35,7 @@ class ConsultaControllerTest {
     }
 
     @Test
-    void cancelar() {
+    @DisplayName("Deve Devolve Código http 404 quando informações forem invalidas..")
+    void cancelar_cenario1() throws Exception {
     }
 }
