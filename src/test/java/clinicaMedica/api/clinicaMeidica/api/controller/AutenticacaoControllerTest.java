@@ -30,7 +30,6 @@ class AutenticacaoControllerTest {
                 .perform(post("/login"))
                 .andReturn().getResponse();
 
-
         assertThat(response.getStatus())
                 .isEqualTo(HttpStatus.BAD_REQUEST.value());
     }
