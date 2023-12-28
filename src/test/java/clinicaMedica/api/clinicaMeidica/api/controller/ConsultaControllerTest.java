@@ -33,4 +33,8 @@ class ConsultaControllerTest {
 
 
     }
+
+    @Test
+    void cancelar() {
+    }
 }
