@@ -28,7 +28,7 @@ class ValidadorHorarioFuncionamentoClinicaTest {
 
 
         var response = mockMvc.perform(
-                post("/consulta")
+                post("/consultas")
         ).andReturn().getResponse();
 
         assertThat(response.getStatus())
