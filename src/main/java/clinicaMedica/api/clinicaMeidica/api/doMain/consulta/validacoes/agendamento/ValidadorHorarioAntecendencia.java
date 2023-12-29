@@ -4,11 +4,13 @@ package clinicaMedica.api.clinicaMeidica.api.doMain.consulta.validacoes.agendame
 import clinicaMedica.api.clinicaMeidica.api.doMain.ValidacaoException;
 import clinicaMedica.api.clinicaMeidica.api.doMain.consulta.DadosAgendamentoConsulta;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.time.Duration;
 import java.time.LocalDateTime;
 
 @Component("ValidadorHorarioAntecendenciaAgendamento")
+
 public class ValidadorHorarioAntecendencia implements ValidadorAgendamentoDeConsultas{
 
 
