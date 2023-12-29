@@ -1,5 +1,6 @@
 package clinicaMedica.api.clinicaMeidica.api.doMain.consulta.validacoes.agendamento;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -19,6 +20,10 @@ class ValidadorHorarioAntecendenciaTest {
 
 
     @Test
-    void validar() {
+    @DisplayName("Deve Devolve Código Http 404 quando Informações estiverem Invalidas..")
+    void validar_cenario1() throws Exception {
+
+
+
     }
 }
