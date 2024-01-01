@@ -1,5 +1,6 @@
 package clinicaMedica.api.clinicaMeidica.api.doMain.consulta;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.data.jdbc.AutoConfigureDataJdbc;
@@ -21,6 +22,9 @@ class AgendaDeConsultasTest {
     private MockMvc mockMvc;
 
     @Test
-    void agendar() {
+    @DisplayName("Deve Devolver Código Http 404 quando informações forem invalidas...")
+    void agendar_cenario1() throws Exception {
+
+
     }
 }
