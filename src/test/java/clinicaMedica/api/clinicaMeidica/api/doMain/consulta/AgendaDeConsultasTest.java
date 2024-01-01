@@ -1,5 +1,6 @@
 package clinicaMedica.api.clinicaMeidica.api.doMain.consulta;
 
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.data.jdbc.AutoConfigureDataJdbc;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -19,4 +20,7 @@ class AgendaDeConsultasTest {
     @Autowired
     private MockMvc mockMvc;
 
+    @Test
+    void agendar() {
+    }
 }
