@@ -42,6 +42,16 @@ class AgendaDeConsultasTest {
 
     @Test
     @DisplayName("Deve Devolver Código Http 404 quando Informações forem Invalidas...")
-    void cancelar_cenario1() {
+    void cancelar_cenario1() throws Exception{
+
+
+
+        var response = mockMvc
+                .perform(post("/consultas"))
+                .andReturn().getResponse();
+
+
+        assertThat(response.getStatus())
+                .isEqualTo(HttpStatus.BAD_REQUEST.value());
     }
 }
