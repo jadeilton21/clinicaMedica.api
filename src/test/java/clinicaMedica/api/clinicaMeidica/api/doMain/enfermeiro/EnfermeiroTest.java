@@ -38,6 +38,7 @@ class EnfermeiroTest {
     }
 
     @Test
-    void excluir() {
+    @DisplayName("Deve Devolver Código 404 quando Informações forem Invalidas..")
+    void excluir_cenario1() {
     }
 }
