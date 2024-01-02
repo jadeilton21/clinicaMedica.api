@@ -30,7 +30,6 @@ class ConsultaTest {
         var respones = mockMvc
                 .perform(post("/consultas"))
                 .andReturn().getResponse();
-
         assertThat(respones.getStatus())
                 .isEqualTo(HttpStatus.BAD_REQUEST.value());
     }
