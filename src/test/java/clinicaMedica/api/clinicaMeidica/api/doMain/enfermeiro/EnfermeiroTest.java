@@ -32,8 +32,6 @@ class EnfermeiroTest {
                 .perform(post("/enfermeiros"))
                 .andReturn().getResponse();
 
-
-
         assertThat(response.getStatus())
                 .isEqualTo(HttpStatus.BAD_REQUEST.value());
 
