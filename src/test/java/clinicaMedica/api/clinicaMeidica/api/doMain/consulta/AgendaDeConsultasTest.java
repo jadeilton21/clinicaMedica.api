@@ -39,4 +39,8 @@ class AgendaDeConsultasTest {
                 .isEqualTo(HttpStatus.BAD_REQUEST.value());
 
     }
+
+    @Test
+    void cancelar() {
+    }
 }
