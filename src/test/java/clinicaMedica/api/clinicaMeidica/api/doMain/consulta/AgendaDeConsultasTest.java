@@ -41,6 +41,7 @@ class AgendaDeConsultasTest {
     }
 
     @Test
-    void cancelar() {
+    @DisplayName("Deve Devolver Código Http 404 quando Informações forem Invalidas...")
+    void cancelar_cenario1() {
     }
 }
