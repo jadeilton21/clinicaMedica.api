@@ -23,6 +23,7 @@ class ConsultaTest {
     @Autowired
     private MockMvc mockMvc;
 
+
     @Test
     @DisplayName("Deve Devolver Código Http 404 quando informações forem invalidas..")
     void cancelar_cenario1() throws Exception{
