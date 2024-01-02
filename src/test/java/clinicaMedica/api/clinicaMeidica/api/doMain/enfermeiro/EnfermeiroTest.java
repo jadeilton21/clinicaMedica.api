@@ -36,4 +36,8 @@ class EnfermeiroTest {
                 .isEqualTo(HttpStatus.BAD_REQUEST.value());
 
     }
+
+    @Test
+    void excluir() {
+    }
 }
