@@ -34,4 +34,16 @@ class ConsultaTest {
         assertThat(respones.getStatus())
                 .isEqualTo(HttpStatus.BAD_REQUEST.value());
     }
+
+    @Test
+    @DisplayName("Deve Devolver Código Http 404 quando informações forem invalidas..")
+    void getData_cenario1() throws Exception{
+
+        var response = mockMvc.perform(
+                post("/consultas")
+        ).andReturn().getResponse();
+
+        assertThat(response.getStatus())
+                .isEqualTo(HttpStatus.BAD_REQUEST.value());
+    }
 }
