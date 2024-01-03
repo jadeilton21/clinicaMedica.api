@@ -28,7 +28,7 @@ class PacienteTest {
     void atualizarInfomacoes_cenario1() throws Exception {
 
         var response = mockMvc
-                .perform(post("pacientes"))
+                .perform(post("/pacientes"))
                 .andReturn().getResponse();
 
         assertThat(response.getStatus())
