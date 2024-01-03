@@ -1,5 +1,6 @@
 package clinicaMedica.api.clinicaMeidica.api.doMain.medico;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.data.jdbc.AutoConfigureDataJdbc;
@@ -22,6 +23,7 @@ class MedicoTest {
     @Autowired
     private MockMvc mockMvc;
     @Test
+    @DisplayName("Deve Devolver Código 404 quando informações forem invalidas..")
     void atualizarInformacoes_cenario1() throws Exception{
 
         var response = mockMvc
@@ -29,5 +31,10 @@ class MedicoTest {
                 ).andReturn().getResponse();
         assertThat(response.getStatus())
                 .isEqualTo(HttpStatus.BAD_REQUEST.value());
+    }
+
+    @Test
+    @DisplayName("Deve Devolver Código 404 quando informações forem invalidas..")
+    void excluir_cenario1() throws Exception {
     }
 }
