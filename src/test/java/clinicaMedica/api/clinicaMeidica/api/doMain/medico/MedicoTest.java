@@ -36,5 +36,13 @@ class MedicoTest {
     @Test
     @DisplayName("Deve Devolver Código 404 quando informações forem invalidas..")
     void excluir_cenario1() throws Exception {
+
+        var response = mockMvc
+                .perform(post("/medicos"))
+                .andReturn().getResponse();
+
+
+        assertThat(response.getStatus())
+                .isEqualTo(HttpStatus.BAD_REQUEST.value());
     }
 }
