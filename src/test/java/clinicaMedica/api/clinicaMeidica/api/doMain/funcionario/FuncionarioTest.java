@@ -36,6 +36,11 @@ class FuncionarioTest {
     @DisplayName("Deve Devolver Código Http 404 quando Quando informações forem invalidas..")
     void excluir_cenario1() throws Exception{
 
-        var re
+        var response = mockMvc
+                .perform(post("/funcionarios"))
+                .andReturn().getResponse();
+
+        assertThat(response.getStatus())
+                .isEqualTo(HttpStatus.BAD_REQUEST.value());
     }
 }
