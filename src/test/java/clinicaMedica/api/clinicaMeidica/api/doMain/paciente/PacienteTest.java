@@ -34,4 +34,9 @@ class PacienteTest {
         assertThat(response.getStatus())
                 .isEqualTo(HttpStatus.BAD_REQUEST.value());
     }
+
+    @Test
+    @DisplayName("Deve Devolver Código Http 404 quando informações forem invalidas..")
+    void excluir_cenario1() throws Exception {
+    }
 }
