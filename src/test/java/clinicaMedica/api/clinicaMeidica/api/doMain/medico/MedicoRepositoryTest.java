@@ -50,7 +50,6 @@ class MedicoRepositoryTest {
     }
 
 
-
     @Test
     @DisplayName("Deveria devolver medico quando ele estiver disponivel na data")
     void escolherMedicoAleatorioLivreNaDataCenario2() {
